@@ -7,6 +7,7 @@ import { UserComponent } from '../modules/user/user.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { ComandosComponent } from '../modules/comandos/comandos.component';
 
 
 
@@ -17,7 +18,9 @@ import { MatDividerModule } from '@angular/material/divider';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    ComandosComponent
+    
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import { MatDividerModule } from '@angular/material/divider';
     SharedModule,
     MatSidenavModule,
     MatDividerModule
-
+    
+    
   ]
 })
 export class DefaultModule { }

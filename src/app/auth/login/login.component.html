@@ -1,0 +1,46 @@
+
+<div class="container w-50">
+  <div class="card ">
+    <div class="card-header" style="text-align: center;">
+      <h3> <strong>Iniciar sesión</strong></h3>
+    </div>
+    <div class="card-body ">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="assets/images/usuario.png" height="150px" width="150px" />
+        </div>
+        <div class="col-md-6">
+          <form #frmLogin="ngForm" novalidate (ngSubmit)="login(frmLogin)">
+            <div class="form-group">
+              <label for="username"><strong>Nombre Usuario</strong></label>
+              <input type="text" class="form-control margin_FormTop" placeholder="Nombre usuario" name="nombreUsuario"
+                #nomUsuario="ngModel" [(ngModel)]="loginUsuarioDTO.Username"
+                [ngClass]="{'is-invalid': nomUsuario.touched && nomUsuario.invalid}" required>
+              <span class="invalid-feedback">
+                El nombre de usuario es requerido
+              </span>
+
+            </div>
+            <div class="form-group margin_FormTop">
+              <label for="password"><strong>Password</strong></label>
+              <input type="password" class="form-control margin_FormTop" placeholder="Password" name="pass" #password="ngModel"
+                [(ngModel)]="loginUsuarioDTO.Password" [ngClass]="{'is-invalid': password.touched && password.invalid}"
+                required minlength="3">
+              <span class="invalid-feedback">
+                <span *ngIf="password.errors?.required">
+                  La contraseña es requerida
+                </span>
+                <span *ngIf="password.errors?.minlength">
+                  La contraseña debe tener al menos 3 caractéres
+                </span>
+              </span>
+
+            </div>
+            <br>
+            <button [disabled]="frmLogin.invalid" class="btn btn-primary button_right">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

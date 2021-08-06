@@ -1,20 +1,24 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h2>Locky </h2>
-            <h4>example@email.com</h4>
+            <h2>Bienvenido {{_servicioCambioNombre.roleUser}}! </h2>
+            <h3>
+             {{_servicioCambioNombre.nameUser}}
+            </h3>
+            <!-- <h4>role_user=role_user jajaja</h4> -->
+            <!-- <h4>{{propiedad_uno}}</h4> -->
         </div>
         <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Locky">
     </div>
 
     <mat-divider></mat-divider>
     <h2 matsubheader>Paginas</h2>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/usuario">Usuario</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/comandos">Comandos</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/default/comandos">Comandos</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/default/dashboard">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/default/usuario"> Usuario</a>
     
     <mat-divider></mat-divider>
-    <h2 matsubheader>Herramientes</h2>
+    <!-- <h2 matsubheader>Herramientes</h2>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/usuario">
         <mat-icon>import_contacts</mat-icon>
         Contactos
@@ -23,5 +27,5 @@
         <mat-icon>contact_phone</mat-icon>
         Contacto clave
     </a>
-    Otro menu
+    Otro menu -->
 </mat-nav-list>

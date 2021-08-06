@@ -1,0 +1,112 @@
+<!-- <div class="container w-100 ">
+   <div > -->
+    <div class="container  margins">
+        <div class="row">
+            <div class="card col-4 margin-card-right ">
+                <div class="card-header" style="text-align: center;">
+                    <h3> <b>Direcciones IP</b></h3>
+                </div>
+               
+                    <div class="row margin-containers">
+                        <div class="text-center mt-2">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <ul class="list-group">
+                                  <li class="list-group-item">
+                                    <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1"
+                                      (change)="checkUncheckAll()" /> 
+                                      <strong> Seleccionar<br> o<br> deseleccionar todo</strong>
+                                      <!-- <strong> Deseclección todo</strong> -->
+                                  </li>
+                                </ul>
+                                <ul class="list-group">
+                                  <li class="list-group-item" *ngFor="let item of checklist">
+                                    <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value="{{item.id}}"
+                                      (change)="isAllSelected()" />
+                                    {{item.ipAddress}}
+                                  </li>
+                                </ul>
+                              </div>
+                              <!-- <div class="col-md-6">
+                                <code>{{checkedList}}</code>
+                              </div> -->
+                            </div>
+                          </div>
+                    
+                            <!-- <select class="form-select " multiple aria-label="multiple select example">
+                                <!-- <option selected>Open this select menu</option> -->
+                                <!-- <option value="i+1">{{i+1}})  {{liDirectionsIp.ipAddress}} : {{liDirectionsIp.port}}</option> -->
+                                <!-- <option value="2">direccion2</option>
+                                <option value="3">direccion3</option>
+                                <option value="3">todas</option> -->
+                            <!-- </select>  -->
+                        <!-- <table class="table "> -->
+                            <!-- <thead>
+                                <!-- <tr>
+                                    <th>#</th>
+                                    <th>Dirección ip</th>
+                                    <th><input class="text-center" type="checkbox"></th>
+                                    <!-- <th><input class="text-center" type="checkbox"></th> -->
+                                <!-- </tr> -->
+                                     
+                                   
+                            <!-- </thead> --> 
+                            <!-- <tbody>
+                                <tr *ngFor="let lisIpAddress of listIpAddress; let i=index">
+                                        <td> {{i+1}}<td>
+                                        <td> {{lisIpAddress.ipAddress}}<td>
+                                        <td><input class="text-center" type="checkbox"><td>
+                                </tr>
+                            </tbody> -->
+                        <!-- </table>  -->
+
+                        
+                        
+                    </div>
+                <!-- <div>
+                    <button type="submit" class="btn btn-primary button_right">Seleccionar</button>
+    
+                </div> -->
+            </div>
+    
+    
+            <div class="card col-7 ">
+                <div class="card-header" style="text-align: center;">
+                    <h3><b>Envio de comandos</b></h3>
+                </div>
+                
+                <div class="row margin-containers">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Comandos a enviar</option>
+                        <option value="1">Encender maquina virtual</option>
+                        <option value="2">Apagar maquina virtual</option>
+                        <option value="3">Crear maquina virtual</option>
+                        <option value="4">Listar maquinas virtuales</option>
+                      </select>
+                </div>
+                <div class="row">
+                    <div class ="col-6">
+                        <br>
+                        <label for="textarea"><b>Respuesta</b> </label>
+                        <p>
+                            <textarea id="textarea" rows="3" disabled></textarea>
+                          </p>
+                    </div>
+                    <div class ="col-6 ">
+                        <div class="row margin-buttons button_right">
+                            <div class="d-flex justify-content-center ">
+                                <div>
+                                    <button type="submit" class="btn btn-primary button_right">Enviar</button>
+                                </div>
+                                <!-- <div class="col-md-1">
+                                    <button type="button" class="btn btn-danger">Cancelar</button>
+                                </div> -->
+                            </div>
+                        </div>  
+                    </div>
+            
+                </div>
+               
+            </div>
+        </div>
+    </div>

@@ -1,1 +1,65 @@
-<p>user works!</p>
+<div class="container w-50" style="margin-top: 50px;">
+    <div class="card ">
+        <div class="card-header" style="text-align: center;">
+            <h3> <strong>Registrar {{rolLabel}}</strong></h3>
+        </div>
+
+        <!-- <span style="text-align: center;">
+        <h3>Registrar {{usuarioLabel}}</h3>
+    </span> -->
+        <div class="card-body ">
+            <form [formGroup]="frmUsuario" (ngSubmit)="crearUsuario(frmUsuario)" >
+                <div class="form-group">
+                    <label for="nombre"><strong>Usuario: </strong></label>
+                    <input type="text" class="form-control" style="margin-top: 10px;" formControlName="userNameColaborador" [ngClass]="{'is-invalid': frmUsuario.get('userNameColaborador')?.touched &&
+                                        frmUsuario.get('userNameColaborador')?.invalid}"  [(ngModel)]="registerUserDTO.Username"
+                        placeholder="Nombre del usuario">
+                    <span class="invalid-feedback">
+                        <span *ngIf="frmUsuario.get('userNameColaborador')?.errors?.required">
+                            El usuario es requerido
+                        </span>
+                        <span *ngIf="frmUsuario.get('userNameColaborador')?.errors?.minlength">
+                            El usuario debe contener minimo 3 caracteres
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group"  style="margin-top: 10px;">
+                    <label for="contraseña"><strong>Contraseña:</strong> </label>
+                    <input type="password" class="form-control" style="margin-top: 10px;" formControlName="passwordUser" 
+                        placeholder="contraseña del usuario" [(ngModel)]="registerUserDTO.Password"  [ngClass]="{'is-invalid': frmUsuario.get('passwordUser')?.touched &&
+                                        frmUsuario.get('passwordUser')?.invalid}">
+                    <span class="invalid-feedback" >
+                       <span *ngIf="frmUsuario.get('passwordUser')?.errors?.required">
+                        La contraseña es requerida</span>  
+                        <span *ngIf="frmUsuario.get('passwordUser')?.errors?.minlength">
+                            El usuario debe contener minimo 3 caracteres
+                        </span>
+                    </span>
+                </div>
+                <div style="margin-top: 10px;">
+                   <Strong>Rol:</Strong> 
+                </div>
+                <div class="form-check form-check-inline" style="margin-top: 10px;">
+                   
+                    <input class="form-check-input" type="radio" formControlName="rolUsuario" 
+                        (click)="selectRolUsuario('Administrador')" [(ngModel)]="registerUserDTO.Role" value="Administrador">
+                    <label class="form-check-label" for="Administrador">Administrador</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="rolUsuario"
+                        (click)="selectRolUsuario('Auxiliar')" [(ngModel)]="registerUserDTO.Role" value="Auxiliar">
+                    <label class="form-check-label" for="Auxiliar">Auxiliar</label>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit"  class="btn btn-primary button_right" [disabled]="frmUsuario.invalid">Guardar</button>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <button type="button" class="btn btn-danger button_left">Cancelar</button>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+      
+        <!-- {{frmUsuario.value | json}} -->
+    </div>

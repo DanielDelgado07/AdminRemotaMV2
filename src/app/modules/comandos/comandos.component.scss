@@ -1,0 +1,30 @@
+.margins{
+    margin-top: 30px;
+}
+.margin-containers{
+    margin-top: 10px;
+     margin-left: 2px;
+     margin-right: 2px;
+}
+// .margin-buttons{
+//     margin-bottom: 10px;
+// }
+.margin-card-right{
+    margin-right: 10px;
+}
+textarea {
+    overflow: scroll; /* Horizontal and vertical scrollbar*/
+    height: 200px;
+    width: 500px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+  
+}
+.button_right {
+    margin-top: 10px;
+    float: right;
+}
+.margin_top {
+    margin: top 10px;
+}
