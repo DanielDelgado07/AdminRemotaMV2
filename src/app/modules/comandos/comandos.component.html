@@ -63,10 +63,10 @@
                         
                         
                     </div>
-                <!-- <div>
-                    <button type="submit" class="btn btn-primary button_right">Seleccionar</button>
+                <div>
+                    <button type="submit" class="btn btn-primary button_right" (click)="conectaServidor()" [disabled]="selectorIPBandera">Conectar</button>
     
-                </div> -->
+                </div>
             </div>
     
     
@@ -80,8 +80,9 @@
                         <option selected>Comandos a enviar</option>
                         <option value="1">Encender maquina virtual</option>
                         <option value="2">Apagar maquina virtual</option>
-                        <option value="3">Crear maquina virtual</option>
-                        <option value="4">Listar maquinas virtuales</option>
+                        <option value="3">Listar maquinas virtuales</option>
+                        <option value="4">Crear maquina virtual</option>
+                        <option value="5">Enviar un archivo</option>
                       </select>
                 </div>
                 <div class="row">

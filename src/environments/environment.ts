@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-    myAppUrl:'https://localhost:5001/',
+    myAppUrl:'https://localhost:44388/',
     myApiUrl:'api/login/getUserLogin/',
     myApiBodyUser:'api/login/registerUser',
-    myApiGetServer:'api/connect/getServersActive'
+    myApiGetServer:'api/connect/getServersActive',
+    myApiGetConnect:'api/connect/getConnect'
 };
 
 /*

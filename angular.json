@@ -110,5 +110,8 @@
       }
     }
   },
-  "defaultProject": "AdminRemotaMV2"
+  "defaultProject": "AdminRemotaMV2",
+  "cli": {
+    "analytics": "7a989e91-52d1-4409-99b7-a1e5e8d40b8b"
+  }
 }
