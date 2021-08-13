@@ -1,5 +1,53 @@
 <div>
-    <!-- <app-widget-area></app-widget-area> -->
+  <div>
+    <h3> <strong>Tabla: Caracteristicas del Hardware de los equipos en la sala  </strong></h3>
+  </div> 
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id+1}} </td>
+        </ng-container>
+        id', 'hostName', 'hardDisk', 'memory','cpu'
+        <!-- Name Column -->
+        <ng-container matColumnDef="hostName">
+          <th mat-header-cell *matHeaderCellDef> Nombre del equipo </th>
+          <td mat-cell *matCellDef="let element"> {{element.hostName}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="hardDisk">
+          <th mat-header-cell *matHeaderCellDef> Disco duro </th>
+          <td mat-cell *matCellDef="let element"> {{element.hardDisk}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="memory">
+          <th mat-header-cell *matHeaderCellDef> Memoria </th>
+          <td mat-cell *matCellDef="let element"> {{element.memory}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cpu">
+            <th mat-header-cell *matHeaderCellDef> CPU </th>
+            <td mat-cell *matCellDef="let element"> {{element.cpu}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+      
+     
+</div>
+    <!-- <mat-divider></mat-divider>
+<div>
+          <app-widget-area></app-widget-area>
 </div>
 <mat-divider></mat-divider>
 <div>
@@ -10,4 +58,4 @@
 </div>
 <mat-divider></mat-divider>
     <div>Table</div>
-    <div>Pie chart</div>
+    <div>Pie chart</div> -->

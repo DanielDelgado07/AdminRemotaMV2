@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class SideBarChangesNamesService {
-  nameUser: string = "";
-  roleUser: string = "";
+  nameUser!: string;
+  roleUser!: string;
   constructor() { }
 }

@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { ComandosComponent } from './comandos/comandos.component';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import {  MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { ComandosComponent } from './comandos/comandos.component';
     ModulesRoutingModule,
     RouterModule,
     SharedModule,
-    
+    MatTableModule,
+    MatPaginatorModule
   ]
   
 })

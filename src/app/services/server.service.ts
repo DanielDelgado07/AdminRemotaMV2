@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,6 +15,7 @@ export class ServerService {
   readonly myAppUrl = environment.myAppUrl;
   readonly myApiGetServer= environment.myApiGetServer;
   readonly myApiGetConnect = environment.myApiGetConnect;
+  readonly myApiSendMessage = environment.myApiSendMessage;
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +27,10 @@ export class ServerService {
   getConnect( serverDTO: Server[]): Observable<any>{
     const headers =this._headers.append("foo","Bar");
     return this.http.post(this.myAppUrl+this.myApiGetConnect,serverDTO,{headers: headers});
+  }
+
+  sendMessage( message: string): Observable<any>{
+    const headers = this._headers.append("foo","Bar");
+    return this.http.post(this.myAppUrl+this.myApiSendMessage,message,{headers:headers});
   }
 }

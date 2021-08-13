@@ -8,7 +8,9 @@ export const environment = {
     myApiUrl:'api/login/getUserLogin/',
     myApiBodyUser:'api/login/registerUser',
     myApiGetServer:'api/connect/getServersActive',
-    myApiGetConnect:'api/connect/getConnect'
+    myApiGetConnect:'api/connect/getConnect',
+    myApiGetDashboard:'api/dashboard/obtainDashboard',
+    myApiSendMessage:'api/connect/sendMessage'
 };
 
 /*
