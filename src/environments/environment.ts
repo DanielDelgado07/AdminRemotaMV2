@@ -10,7 +10,7 @@ export const environment = {
     myApiGetServer:'api/connect/getServersActive',
     myApiGetConnect:'api/connect/getConnect',
     myApiGetDashboard:'api/dashboard/obtainDashboard',
-    myApiSendMessage:'api/connect/sendMessage'
+    myApiSendMessage:'api/connect/sendMessage/'
 };
 
 /*
