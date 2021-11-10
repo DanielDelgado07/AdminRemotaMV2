@@ -81,10 +81,26 @@
                         <option value="start" [disabled]="butDisabled">Encender maquina virtual</option>
                         <option value="close" [disabled]="butDisabled">Apagar maquina virtual</option>
                         <option value="show list">Listar maquinas virtuales</option>
-                        <option value="create" [disabled]="butDisabled">Crear maquina virtual</option>
+                        <option value="create" (click)="onCreate()">Crear maquina virtual</option>
                         <option value="envArchivo" [disabled]="butDisabled">Enviar un archivo</option>
                       </select>
                 </div>
+                
+
+                                <div class="row">
+                                  <div class="col-sm-8">
+                                    <input type="text" class="form-control" style="margin-top: 10px; margin-right: 10px" 
+                    placeholder="Nombre de la maquina">
+                    <!--formControlName="userNameColaborador" [ngClass]="{'is-invalid': frmUsuario.get('userNameColaborador')?.touched &&
+                                    frmUsuario.get('userNameColaborador')?.invalid}"  [(ngModel)]="registerUserDTO.Username"-->
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary button_right">Enviar</button>
+
+                                  </div>
+                                </div>
+                        
+                            
                 <div class="row">
                     <div class ="col-6">
                         <br>
@@ -93,20 +109,9 @@
                             <textarea id="textarea" rows="3" disabled></textarea>
                           </p>
                     </div>
-                    <div class ="col-6 ">
-                        <div class="row margin-buttons button_right">
-                            <div class="d-flex justify-content-center ">
-                                <div>
-                                    <button type="submit" class="btn btn-primary button_right">Enviar</button>
-                                </div>
-                                <!-- <div class="col-md-1">
-                                    <button type="button" class="btn btn-danger">Cancelar</button>
-                                </div> -->
-                            </div>
-                        </div>  
+                   
                     </div>
             
-                </div>
                
             </div>
         </div>

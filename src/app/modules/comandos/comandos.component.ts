@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Server } from 'src/app/model/server';
 import { ServerService } from 'src/app/services/server.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalCreateComponent } from './modal-create/modal-create.component';
 
 @Component({
   selector: 'app-comandos',
@@ -26,7 +28,8 @@ export class ComandosComponent implements OnInit {
   checkedList:any;
  
   constructor(private _serverService: ServerService,
-              private toastr: ToastrService) { 
+              private toastr: ToastrService,
+              private dialog: MatDialog) { 
     this.masterSelected= false;
     this.getCheckedItemList();
     this.butDisabled=true;
@@ -42,7 +45,7 @@ export class ComandosComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtainListServerActive();
-  
+   
   }
 
   //obtener la lista de las direccioens ip de los servidores activos 
@@ -163,13 +166,24 @@ export class ComandosComponent implements OnInit {
         console.log("varSeleccionada",this.verSeleccion);
         this.sendMessage(this.verSeleccion);
               this.butDisabled=false;
+            }
+      if(this.verSeleccion == 'create'){
+        this.onCreate();
       }
+     
       else{
         console.log("algo salio mal")
       }
    }
 
-  
+   //Metodo que se encarga de crear  el pop-up de crear MV
+  onCreate(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "700px";
+    this.dialog.open(ModalCreateComponent,dialogConfig);
+  }
   
 }
 

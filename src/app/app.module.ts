@@ -11,7 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './auth/login.module';
 
+import {MatDialogModule} from '@angular/material/dialog';
 import { ModulesModule } from './modules/modules.module';
+import { ModalCreateComponent } from './modules/comandos/modal-create/modal-create.component';
+
 
 
 
@@ -30,6 +33,7 @@ import { ModulesModule } from './modules/modules.module';
     FormsModule,
     HttpClientModule,
     LoginModule,
+    MatDialogModule,
     ModulesModule,
     ReactiveFormsModule,
     
@@ -39,8 +43,11 @@ import { ModulesModule } from './modules/modules.module';
   }), // ToastrModule added
   
   ],
+  exports:[MatDialogModule],
   
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalCreateComponent]
+  
 })
 export class AppModule { }

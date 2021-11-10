@@ -20,11 +20,14 @@
                     <button mat-button [matMenuTriggerFor]="menu">
                         <mat-icon>person outline</mat-icon>
                     </button>
-                    <mat-menu #menu="matMenu">
-                      <button mat-menu-item>
-                          <mat-icon routerLink="/">exit_to_app</mat-icon>
-                           salir
-                      </button>      
+                    <mat-menu #menu="matMenu" >
+                   
+                        <div routerLink="/"> 
+                        <button mat-menu-item >
+                            <mat-icon >exit_to_app</mat-icon>
+                          salir 
+                        </button>      
+                    </div> 
                     </mat-menu>
                 </li>
             </ul>       

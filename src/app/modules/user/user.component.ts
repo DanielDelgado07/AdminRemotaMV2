@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
  
   }
   
-  
+  // Método que se encarga de seleccionar el rol del usuario que se desea crear
   selectRolUsuario(rol: string){
     console.log(rol);
     if(rol=='Administrador'){
@@ -46,6 +46,8 @@ export class UserComponent implements OnInit {
     }
   }
 
+  //Método que se encarga de validar que el usuario sea un administrador para poder crear el usuario,
+  //con un mensaje de alerta que  que muestra una ventana emergente donde indica la advertencia
   crearUsuario(frmUsuario:FormGroup){
    //  console.log(this.frmUsuario);
    
@@ -60,6 +62,8 @@ export class UserComponent implements OnInit {
  
   }
   
+  //Metodo que se encarga de crear el nuevo usuario haciendo uso del subscribe y de las validaciones
+  // que se llevan en el subscribe 
   createUserNew(bodyUser:User, f:FormGroup){
       this._userService.registerUser(bodyUser).subscribe(data=>
         {
@@ -77,8 +81,7 @@ export class UserComponent implements OnInit {
          });
   }
 
-  
-  
+  //Metodo que se encarga de validar a el usuario que cumpla con unos criterios de validación
   validarUsuario() {
     this.frmUsuario =  this.frm.group({
       userNameColaborador: ['',[Validators.required, Validators.minLength(3),]],
@@ -90,8 +93,10 @@ export class UserComponent implements OnInit {
     if(this.someVar == 'Administrador'){
       
          
-       //  this.frmUsuario.enable();
-       
+       this.frmUsuario.enable();
+      //  this.frmUsuario.controls.userNameColaborador.disable();
+      //  this.frmUsuario.controls.passwordUser.disable();
+      //  this.frmUsuario.controls.rolUsuario.disable();
     }
     else{
        this.frmUsuario.disable();
