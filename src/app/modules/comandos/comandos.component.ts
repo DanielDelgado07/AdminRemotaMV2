@@ -13,15 +13,27 @@ import { ModalCreateComponent } from './modal-create/modal-create.component';
   styleUrls: ['./comandos.component.scss']
 })
 export class ComandosComponent implements OnInit {
+  //arreglos
   checklist: any =[];
   checklistNew: any =[];
   checklistNew2: any= [];
   lsResultShowList: any = [];
+  arrayCommands: any  =[];
+  arregloFin: any =[];
+
+  //entradas
+  inputMV: any;
+  cadena: any;
   masterSelected:boolean;
   opcionSeleccionado: string  = '0'; // Iniciamos
-  verSeleccion: string = '';
+ 
+
+  //banderas
+  enviarBandera = true;
+  inputBandera = true;
   selectorIPBandera = true;
-  butDisabled: boolean;
+  butDisabled: boolean =true;
+
   
   
   //checklist:any;
@@ -32,7 +44,6 @@ export class ComandosComponent implements OnInit {
               private dialog: MatDialog) { 
     this.masterSelected= false;
     this.getCheckedItemList();
-    this.butDisabled=true;
     this.checklist;
     this.checklist =[ 
     // {id: 1, hostName: "MacBook-Pro-de-Daniel.local", ipAddress: "192.168.0.17", port: 3401},
@@ -45,6 +56,7 @@ export class ComandosComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtainListServerActive();
+   
    
   }
 
@@ -126,7 +138,7 @@ export class ComandosComponent implements OnInit {
       this.obtenerConexionServers(this.checklistNew);
       // this.sendMessage('show list');
       // this.logicMessage('show list');
-      this.capturarSelect();
+      //this.capturarSelect();
       this.selectorIPBandera = true;
   }
 
@@ -149,26 +161,48 @@ export class ComandosComponent implements OnInit {
   // }
   //Se encarga de enviar los comandos al back
   sendMessage(message:string){
+    console.log("Estoy en sendMessage")
+
     this._serverService.sendMessage(JSON.stringify(message)).subscribe(data=>{
       // this.lsResultShowList = data;
       console.log("InsideSendMessage: -->",data);
-      document.getElementById("textarea")!.innerHTML = data[0];
+      this.arrayCommands = data;
+      console.log("rta _ arrayCommands"+this.arrayCommands)
+     // document.getElementById("textarea")!.innerHTML = data[0];
       //  this.lsResultShowList[0]);
+      this.manejarArreglo(this.arrayCommands,this.cadena,this.arregloFin);
     }, error =>{
       console.log(error);
     });
   }
+
   //captura la selección del select en el html
   capturarSelect(){
  
-    this.verSeleccion = this.opcionSeleccionado;
-      if(this.verSeleccion == 'show list'){
-        console.log("varSeleccionada",this.verSeleccion);
-        this.sendMessage(this.verSeleccion);
-              this.butDisabled=false;
+    
+      if(this.opcionSeleccionado == 'show list'){
+        console.log("varSeleccionada",this.opcionSeleccionado);
+        this.sendMessage(this.opcionSeleccionado);
+              this.butDisabled = false;
+              this.inputBandera = true;
+              this.enviarBandera = true;
+              this.inputMV = "";
             }
-      if(this.verSeleccion == 'create'){
+      if(this.opcionSeleccionado=='start'){
+             this.inputBandera = false;
+             this.enviarBandera = false;
+            }
+
+      if(this.opcionSeleccionado=='close'){
+        this.inputBandera = false;
+        this.enviarBandera = false;
+      }
+
+      if(this.opcionSeleccionado == 'create'){
         this.onCreate();
+        this.inputMV="";
+        this.inputBandera = true;
+        this.enviarBandera = true;
       }
      
       else{
@@ -185,6 +219,56 @@ export class ComandosComponent implements OnInit {
     this.dialog.open(ModalCreateComponent,dialogConfig);
   }
   
+  //revisar como manejar este arreglo para que pinte solo la maquina
+  manejarArreglo(arreglo:any[], cadena:string, arregloFin: any []){
+    console.log("Estoy en manejar arreglo")
+      cadena= arreglo.toString();
+     arregloFin = cadena.split('"');
+
+     console.log("1 "+arregloFin[0]+"\n  ")
+     cadena=arregloFin[0] +"\n";
+     console.log("2 "+cadena);
+     for (let index = 0; index <= arregloFin.length; index++) {
+       
+        if(index == arregloFin.length-1){
+           break;
+         }
+         console.log(cadena=cadena + arregloFin[index=index+1] +'\n')
+       
+        
+          
+       } 
+       this.txtAreaRespuesta(cadena, this.inputMV); //ojo
+       //cadena.replace('undefined','jajaja')
+      
+      
+    
+      //console.log(cadena);
+ 
+   } 
+   txtAreaRespuesta(cadena: string, inputMV:string){
+     console.log("txtAreaRespuesta");
+     if( this.opcionSeleccionado == 'show list')
+     document.getElementById("textarea")!.innerHTML  = cadena ;
+   }
+
+   //Metodo que se encarga de enviar comandos
+  enviar(){
+    console.log("Estoy en enviar");
+     
+     if(this.opcionSeleccionado == 'start'){
+      
+       //     this.enviarBandera = false;
+       this.sendMessage(this.opcionSeleccionado+"="+this.inputMV);
+       document.getElementById("textarea")!.innerHTML  = "Se inicio la maquina virtual: \n"+this.inputMV;
+     }
+       if(this.opcionSeleccionado == 'close'){
+         this.sendMessage(this.opcionSeleccionado+"="+this.inputMV);
+         document.getElementById("textarea")!.innerHTML  = "Se cerro la maquina virtual: \n"+this.inputMV;
+ 
+       }
+         
+   }
 }
 
 

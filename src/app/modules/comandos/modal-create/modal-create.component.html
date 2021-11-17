@@ -1,7 +1,5 @@
 <div class="container">
 
-
-   
     <div class="card">
       <div class="scroll-bg">
         <div class="scroll-div">
@@ -19,15 +17,15 @@
                               <div class="row">
                                 <div class="col-8">
                                   <label for="nombre"><strong>Nombre maquina:</strong></label>
-                                  <input type="text" placeholder="nombre MV" class="form-control"/>
+                                  <input type="text" placeholder="nombre MV" class="form-control margin-top"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-8">
-                                  <label for="nombre"><strong>Sistema operativo:</strong></label>
-                                  <input type="text" placeholder="Sistema operativo" class="form-control" />
+                                  <label for="nombre" class="margin-top"><strong>Sistema operativo:</strong></label>
+                                  <input type="text" placeholder="Sistema operativo" class="form-control margin-top" />
                                 </div>
-                            </div>
+                            </div> -->
                     </div>
                 </div>
                 </div>
@@ -39,17 +37,23 @@
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <label for="nombre"><strong>Tamaño RAM (GB):</strong></label>
+                        <label for="nombre"><strong>Tamaño RAM (MB):</strong></label>
                         <div class="col-3">
-                              <input type="text" placeholder="Tamaño" class="form-control"/>
+                              <input type="text" placeholder="Tamaño" class="form-control margin-top"/>
                         </div>
                       </div>
                       <div class="row">
-                          <label for="nombre"><strong>Número de discos:</strong></label>
+                        <label for="nombre"><strong>Disco duro (MB):</strong></label>
+                        <div class="col-3">
+                              <input type="text" placeholder="Tamaño" class="form-control margin-top"/>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <label class="margin-top" for="nombre"><strong>Número de discos:</strong></label>
                           
                           <div class="col-3">
                               <!-- <select [(ngModel)]="opSelectHD" class="browser-default form-control" (change)="chooseSelectHD()"> -->
-                              <select  class="browser-default form-control" >
+                              <select  class="browser-default form-control margin-top" >
                                 <option selected></option>
                                 <option value="disc1">1</option>
                                 <option value="disc2">2</option>
@@ -60,19 +64,19 @@
                       </div>
                       <div class="row">
                           <div class="col">
-                               <input type="text" class="form-control" style="margin-top: 10px; margin-right: 10px" 
+                               <input type="text" class="form-control margin-top margin-right" 
                                   placeholder="Tam 1">
                          </div> 
                          <div class="col">
-                            <input type="text" class="form-control" style="margin-top: 10px; margin-right: 10px" 
+                            <input type="text" class="form-control margin-top margin-right"  
                                placeholder="Tam 2">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" style="margin-top: 10px; margin-right: 10px" 
+                            <input type="text" class="form-control margin-top margin-right"  
                                placeholder="Tam 3">
                         </div>
                         <div class="col">
-                        <input type="text" class="form-control" style="margin-top: 10px; margin-right: 10px" 
+                        <input type="text" class="form-control margin-top margin-right" 
                            placeholder="Tam 4">
                         </div>
                      </div>
@@ -90,7 +94,7 @@
                       <div class="row">
                         <label for="nombre"><strong>Núcleos CPU</strong></label>
                           <div class="col-3">
-                            <select class="browser-default form-control">
+                            <select class="browser-default form-control margin-top">
                               <option selected></option>
                               <option value="unoCPU">1</option>
                               <option value="dosCPU">2</option>
@@ -99,10 +103,10 @@
                             </select>
                           </div>
                       </div>
-                      <div class="row">
-                        <label for="nombre"><strong>Tarjeta de red</strong></label>
+                      <!-- <div class="row">
+                        <label for="nombre" class="margin-top"><strong>Tarjeta de red</strong></label>
                           <div class="col-8">
-                            <select class="browser-default form-control">
+                            <select class="browser-default form-control margin-top">
                               <option selected></option>
                               <option value="opNat">NAT</option>
                               <option value="opAdaptadorPuente">Adaptador puente </option>
@@ -114,7 +118,7 @@
                               <option value="opNoConectado">No conectado</option>
                             </select>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                   </div>
                 </div>
