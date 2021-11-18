@@ -1,0 +1,177 @@
+<div class="container">
+  <div class="card">
+    <div class="scroll-bg">
+      <div class="scroll-div">
+        <div class="scroll-object">
+          <div class="card-header" style="text-align: center;">
+            <span><strong>Crear Maquina virtual</strong></span>
+          </div>
+
+          <div>
+            <div class="card card-margin-all">
+              <div class="card-header" style="text-align: left;">
+                <span><strong>Datos generales</strong></span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <label for="nombre"><strong>Nombre maquina:</strong></label>
+                    <input
+                      type="text"
+                      placeholder="nombre MV"
+                      class="form-control margin-top"
+                    />
+                  </div>
+                </div>
+                <!-- <div class="row">
+                                <div class="col-8">
+                                  <label for="nombre" class="margin-top"><strong>Sistema operativo:</strong></label>
+                                  <input type="text" placeholder="Sistema operativo" class="form-control margin-top" />
+                                </div>
+                            </div> -->
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-margin-left-right-bottom">
+              <div class="card-header" style="text-align: left;">
+                <span><strong>Almacenamiento</strong></span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <label for="nombre"><strong>Tamaño RAM (MB):</strong></label>
+                  <div class="col-3">
+                    <input
+                      type="text"
+                      placeholder="Tamaño"
+                      class="form-control margin-top"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="nombre"><strong>Disco duro (MB):</strong></label>
+                  <div class="col-3">
+                    <input
+                      type="text"
+                      placeholder="Tamaño"
+                      class="form-control margin-top"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <label class="margin-top" for="nombre"><strong>Número de discos:</strong></label>
+
+                  <div class="col-3">
+                    <select
+                      [(ngModel)]="opSelectHD"
+                      class="form-select"
+                      aria-label="Default select example"
+                      (change)="chooseSelectHD()">
+
+                      <option selected></option>
+                      <option value="disc0">0</option>
+                      <option value="disc1">1</option>
+                      <option value="disc2">2</option>
+                      <option value="disc3">3</option>
+                      <option value="disc4">4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control margin-top margin-right"
+                      placeholder="Tam 1"
+                      [disabled]="disc1B"
+                      [(ngModel)]="disc1"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control margin-top margin-right"
+                      placeholder="Tam 2"
+                      [disabled]="disc2B"
+                      [(ngModel)]="disc2"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control margin-top margin-right"
+                      placeholder="Tam 3"
+                      [disabled]="disc3B"
+                      [(ngModel)]="disc3"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control margin-top margin-right"
+                      placeholder="Tam 4"
+                      [disabled]="disc4B"
+                      [(ngModel)]="disc4"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-margin-left-right-bottom">
+              <div class="card-header" style="text-align: center;">
+                <span><strong>Procesador y red</strong></span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <label for="nombre"><strong>Núcleos CPU</strong></label>
+                  <div class="col-3">
+                    <select class="browser-default form-control margin-top">
+                      <option selected></option>
+                      <option value="unoCPU">1</option>
+                      <option value="dosCPU">2</option>
+                      <option value="tresCPU">3</option>
+                      <option value="cuatroCPU">4</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                        <label for="nombre" class="margin-top"><strong>Tarjeta de red</strong></label>
+                          <div class="col-8">
+                            <select class="browser-default form-control margin-top">
+                              <option selected></option>
+                              <option value="opNat">NAT</option>
+                              <option value="opAdaptadorPuente">Adaptador puente </option>
+                              <option value="opRedInterna">Red interna</option>
+                              <option value="opAdaptadorSoloAnfitrion">Adaptador Sólo-anfitrión</option>
+                              <option value="opControladorGenerico">Controlador genérico</option>
+                              <option value="opRedNat">Red NAT</option>
+                              <option value="opCloudNetworkExperimental">Cloud Network [EXPERIMENTAL]</option>
+                              <option value="opNoConectado">No conectado</option>
+                            </select>
+                          </div>
+                        </div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-danger button_right">
+                  Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary button_right">
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

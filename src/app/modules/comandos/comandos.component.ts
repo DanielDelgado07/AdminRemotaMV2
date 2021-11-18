@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Server } from 'src/app/model/server';
 import { ServerService } from 'src/app/services/server.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ModalCreateComponent } from './modal-create/modal-create.component';
+import { ModalCreateComponent } from '../modal-create/modal-create.component';
 
 @Component({
   selector: 'app-comandos',

@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ComandosComponent } from './comandos/comandos.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import {  MatPaginatorModule } from '@angular/material/paginator';
+import { ModalCreateComponent } from './modal-create/modal-create.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
     DashboardComponent,
     DefaultComponent,
     UserComponent,
-    ComandosComponent
+    ComandosComponent,
+    ModalCreateComponent
   ],
   imports: [
     CommonModule,
